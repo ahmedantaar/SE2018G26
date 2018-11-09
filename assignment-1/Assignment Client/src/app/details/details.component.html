@@ -1,0 +1,24 @@
+
+                    <li *ngFor="let col of cols" style="list-style-type: none">
+                        <div style="background-color:whitesmoke" class="ui-grid-row" *ngIf="car[col.field]!=undefined"> 
+                            <div class="ui-g-4">
+                                <label style="font-weight:bold; color: black" >{{col.field}}</label>
+                            </div>
+                            <div class="ui-g-8">
+                                    <label  >{{car[col.field]}}</label>
+                            </div>
+                            <br>       
+                        </div>
+                        
+                    </li>
+                        
+                   
+                    
+                        
+                  
+                    <p-footer>
+                            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                                <button type="button"  pButton icon="fa fa-close" (click)="Cancel()" label="Ok"></button>
+                        
+                            </div>
+                        </p-footer>

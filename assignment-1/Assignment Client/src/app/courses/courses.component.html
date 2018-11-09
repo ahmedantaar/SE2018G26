@@ -1,0 +1,202 @@
+<!--component html goes here -->
+<!--component html goes here -->
+<div class="main-content">
+    <div class="container-fluid">
+     
+            <button pButton style="margin-left: 14px" label="Add Course" type="button"  (click)="showDialog()" ></button>
+    
+        <br>
+
+<div  id="table" style="display: block" >
+    <div  class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Courses</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <div  class="table-responsive">
+     
+    <p-table   [resizableColumns]="true" columnResizeMode="expand" #dt [columns]="cols" [value]="cars"  selectionMode="single" [(selection)]="selectedCar"  [paginator]="true" [rows]="15" >
+       
+        <ng-template pTemplate="header" let-columns>
+            <tr >
+                
+                <th  style="overflow: auto;"  pResizableColumn >
+                    Name
+                </th>
+               
+                <th  style="overflow: auto;" pResizableColumn >
+                    Max degrees
+                </th>
+                <th  style="overflow: auto;"  pResizableColumn >
+                    Study year
+                </th>
+                <th  style="overflow: auto;"  pResizableColumn >
+                    Course ID
+                </th>
+                
+                <th style="width: 20%" ></th>
+            </tr>
+            <tr >
+                    <th *ngFor="let col of cols" [ngSwitch]="col.field">
+                            <mat-form-field class="example-full-width">
+                        <input placeholder="Search..." matInput *ngSwitchCase="col.field" style=" display: block;"pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                       </mat-form-field>
+                    </th>
+                    <th></th>
+               
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData" >
+                <td *ngFor="let col of columns" pResizableColumn  >    
+                        <label style="width:100%" style="color: black"  > {{rowData[col.field]}}</label>
+                </td>
+    
+               
+                <td>
+                        <div style=" overflow: auto;">
+                                <button mat-raised-button  type="button" matTooltip="Edit Question" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon"  (click)="edit(rowData)"  style="margin-right: 10px"> <i class="material-icons">edit</i></button>
+                                <button mat-raised-button   type="button"  (click)="Details(rowData)"  style="margin-right: 10px" matTooltip="Details" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" > <i class="material-icons">details</i></button>
+                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon" (click)="delete(rowData)" >  <i class="material-icons">close</i></button>
+                                </div>  
+    
+                </td>
+            </tr>
+        </ng-template>
+
+    </p-table>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+    
+    <p-dialog header="" [(visible)]="displayDialog"   [modal]="true" [width]="300">
+        <div class="ui-g ui-fluid" >
+               
+                <li  style="list-style-type: none">
+                    <div class="ui-g-12">
+                            <div class="ui-g-4">
+                                <label style="font-weight:bold; color: black" >Name</label>
+                            </div>
+                            <div class="ui-g-8">
+                                <input pInputText [(ngModel)]="car.Name" />
+                            </div>
+                        </div>
+            </li>
+            <li  style="list-style-type: none">
+                <div class="ui-g-12">
+                        <div class="ui-g-4">
+                            <label style="font-weight:bold; color: black" >Max degrees</label>
+                        </div>
+                        <div class="ui-g-8">
+                            <input pInputText [(ngModel)]="car.Max_degrees" />
+                        </div>
+                    </div>
+        </li>
+        <li  style="list-style-type: none">
+            <div class="ui-g-12">
+                    <div class="ui-g-4">
+                        <label style="font-weight:bold; color: black" >Study years</label>
+                    </div>
+                    <div class="ui-g-8">
+                        <input pInputText [(ngModel)]="car.Study_years" />
+                    </div>
+                </div>
+    </li>
+    <li  style="list-style-type: none">
+        <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label style="font-weight:bold; color: black" >Course ID</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText [(ngModel)]="car.Course_id" />
+                </div>
+            </div>
+</li>
+         
+         
+           
+        </div>
+        <p-footer>
+                <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                    <button type="button" pButton icon="fa fa-close" (click)="Cancel()" label="Cancel"></button>
+                    <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+                </div>
+            </p-footer>
+        </p-dialog>
+       <!-- <p-dialog header="" [(visible)]="displayDialog"   [modal]="true" [width]="300">
+        <p-table #dt  [value]="cars"  selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData" >
+                <td *ngFor="let col of columns" style="table-layout: fixed; width: 100%;" >    
+                    {{rowData[col.field]}}
+                </td>
+               
+            </tr>
+        </ng-template>
+    </p-table>
+    </p-dialog>-->
+        <p-dialog header="Details" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
+                
+                        <li *ngFor="let col of cols" style="list-style-type: none">
+                    <div class="ui-grid-row" *ngIf="car[col.field]!=undefined"> 
+                        <div class="ui-g-4">
+                            <label style="font-weight:bold; color: black" >{{col.field}}</label>
+                        </div>
+                        <div class="ui-g-8">
+                                <label  >{{car[col.field]}}</label>
+                        </div>
+                        <br>       
+                    </div>
+                    
+                </li>
+                    
+               
+                
+                    
+              
+                <p-footer>
+                        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                            <button type="button"  pButton icon="fa fa-close" (click)="Cancel()" label="Ok"></button>
+                    
+                        </div>
+                    </p-footer>
+                </p-dialog>
+    
+        <p-dialog header="Answer" [(visible)]="displayDialog3"   [modal]="true" [width]="450">
+                
+                        <li  style="list-style-type: none">
+                    <div class="ui-grid-row" > 
+                        <div style="margin: auto;">
+                            <label >{{rightAnswer}}</label>
+                        </div>
+                        <br>
+                        <div  style="margin: auto;">
+                                <label >Right Answer is:  </label>
+                                <label >{{finalAnswer}}</label>
+                            </div>
+                       
+                        <br>       
+                    </div>
+                    
+                </li>
+                    
+               
+                
+                    
+              
+                <p-footer>
+                        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                            <button type="button"  pButton icon="fa fa-close" (click)="Cancel()" label="Ok"></button>
+                    
+                        </div>
+                    </p-footer>
+                </p-dialog>
+    </div>
+    </div>
