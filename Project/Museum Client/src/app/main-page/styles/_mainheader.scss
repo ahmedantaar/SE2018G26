@@ -1,0 +1,36 @@
+.main-header{ 
+    position: relative; 
+    display: table;
+    background-image: url(../../assets/img/Main-header.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 970px;
+    height: auto;
+    padding-top: 128px;
+    padding-bottom: 128px;
+    .container{
+        margin-top: 250px;
+        margin-bottom: auto;
+    }
+    .main-content{
+        
+        
+        h1 {
+            font-size: 125px;
+            margin: 0;
+            padding: 0;
+        }
+        h1 , h3 {
+            color: $white;
+        }
+    }
+    .overlay{
+        position: absolute;
+        background-color: $black;
+        opacity: 0.6;
+    }
+    
+    
+}

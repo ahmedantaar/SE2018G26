@@ -1,0 +1,19 @@
+// component css goes here
+#container img 
+{
+ width: 200px;
+ max-height: 250px;
+ margin-left: auto; 
+ margin-right: auto ;
+ display: block;
+}
+
+#container div
+{   
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    max-height: 250px;
+    float: left ;
+    display: block;
+}
