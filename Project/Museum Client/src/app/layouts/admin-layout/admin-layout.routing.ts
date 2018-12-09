@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 import { RegisterComponent } from '../../register/register.component';
+import { MuseumsComponent } from '../../museums/museums.component';
+import { PicDescriptionComponent } from '../../pic-description/pic-description.component';
 
 
 NgModule({
@@ -66,7 +68,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',        component: MainPageComponent },
     { path: 'art',        component: ArtExhibitsComponent },
     { path: 'main',        component: MainPageComponent },
-
-
+    { path: 'museum',        component: MuseumsComponent },
+    { path: 'picture',        component: PicDescriptionComponent },
 ];
 

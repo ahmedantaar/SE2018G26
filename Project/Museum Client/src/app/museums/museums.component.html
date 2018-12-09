@@ -1,0 +1,25 @@
+<!--component html goes here -->
+<div class="main-content">
+    <div class="container-fluid">
+        
+            <mat-form-field class="example-full-width">
+                    <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
+                    </mat-form-field>
+      
+        <div class="nav" id = "container">
+            <div routerLinkActive="active"   *ngFor="let col of cols" class="{{col.class}} nav-item"  >
+            <!-- <a  href='/art'><img     [src]="col.url"></a> -->
+            <a class="nav-link" [routerLink]="[col.path]">
+                    <img     [src]="col.url">
+                </a>
+            <p>{{col.header}}</p>
+        </div>
+        </div>
+    </div>
+     <!-- <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+            </a>
+        </li>
+    </ul> -->
+</div>

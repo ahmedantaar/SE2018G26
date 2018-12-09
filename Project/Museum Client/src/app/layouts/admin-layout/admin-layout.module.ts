@@ -37,6 +37,7 @@ import {
   MatRippleModule,
   MatTooltipModule,
 } from '@angular/material';
+import { MuseumsComponent } from '../../museums/museums.component';
 
 
 
@@ -76,6 +77,7 @@ import {
     DashboardComponent,
     ArtExhibitsComponent,
     PicDescriptionComponent,
+    MuseumsComponent,
     MainComponent,
     RegisterComponent,
     MainPageComponent,

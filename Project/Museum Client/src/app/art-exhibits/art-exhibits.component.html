@@ -1,7 +1,11 @@
 <div class="main-content">
     <div class="container-fluid">
+            <h2>Museum1</h2>
+            <mat-form-field class="example-full-width">
+            <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
+            </mat-form-field>
         <!-- <img src="Card" src="..\..\assets\img\angular2-logo-red.png"> -->
-        <div id = "container">
+        <div class="nav" id = "container">
             <!-- <p-card header="Advanced Card" [style]="{width: '200px'}">
                 <p-header>
                     <img src="Card" src="..\..\assets\img\angular2-logo-red.png">
@@ -14,39 +18,28 @@
                 </p-header>
 
             </p-card> -->
-            <div >
-                <img   src="..\..\assets\img\sidebar-1.jpg">
+            
+            <div  routerLinkActive="active"      >
+                    <a *ngFor="let col of cols"  class="nav-link" [routerLink]="[col.path]">
+                            <img     [src]="col.field">
+                        </a>
+               <!-- <a  *ngFor="let col of cols"  href='/picture'> <img    [src]="col.field" > </a> -->
+            
             </div>
-            <div >
-                <img  src="..\..\assets\img\angular2-logo-red.png">
+            <div   routerLinkActive="active" >
+                    <a *ngFor="let col1 of cols1" class="nav-link" [routerLink]="[col1.path]"> <img  [src]="col1.field"> </a>
+               
             </div>
-             <div   >
-                    <img  src="Card" src="..\..\assets\img\sidebar-4.jpg">
+             <div >
+                    <a  *ngFor="let col2 of cols2"  class="nav-link" [routerLink]="[col2.path]"><img    [src]="col2.field"> </a>
+                  
             </div> 
             <div  >
-                <img  src="..\..\assets\img\sidebar-1.jpg">
+                    <a  *ngFor="let col3 of cols3"  class="nav-link" [routerLink]="[col3.path]"> <img  [src]="col3.field"> </a>
+                
             </div>
-            <div >
-                    <img   src="..\..\assets\img\sidebar-2.jpg">
-            </div>
-            <div >
-                <img  src="..\..\assets\img\sidebar-2.jpg">
-            </div>
-            <div >
-                    <img  src="..\..\assets\img\sidebar-1.jpg">
-            </div>
-            <div >
-                <img  src="..\..\assets\img\sidebar-4.jpg">
-            </div>
-            <div >
-                    <img src="..\..\assets\img\sidebar-1.jpg">
-                </div>
-                <div >
-                        <img   src="..\..\assets\img\sidebar-4.jpg">
-                </div>
-                <div >
-                    <img  src="..\..\assets\img\sidebar-2.jpg">
-                </div>
+            
+           
             
         </div>
     </div>
