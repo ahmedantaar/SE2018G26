@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
     templateUrl: 'auction.component.html',
     styleUrls: ['auction.component.scss']
 })
-export class AuctionComponent {
+export class AuctionComponent implements OnInit {
+    
+    likes;
+   
+    ngOnInit(){
+        this.likes = 5 ;
+
+      
+    }
 
 }

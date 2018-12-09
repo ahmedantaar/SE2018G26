@@ -1,7 +1,31 @@
 <!--component html goes here -->
 <div class="main-content">
     <div class="container-fluid">
+            <button pButton style="margin-left: 14px" label="Apply for auctioning your items" type="button"  ></button>
+        <div id="container">
+            <div>
+                <!-- <img src="..\..\assets\img\arts\51WAV1JasFL.jpg"> -->
+                <img src="..\..\assets\img\arts\images.jpg">
+            </div>
+            <div >
+                <h3>Artist:</h3>
+                <h3>Description:</h3>
+                <p> </p>
+                <h3>CurrentPrice:{{likes}}$</h3>
+                <h3>Bid Here</h3>
+                <div>
+                    <span>
+                        <input pInputText   />
+                    </span>
+                    <span>
+                        Least amount to bid is {{likes}}$.
+                    </span>
+                </div>
+                <div>
+                        <button pButton style="margin-left: 14px" label="Bid" type="button"  ></button>
+                </div>
 
-        
+            </div>
+        </div>
     </div>
 </div>
