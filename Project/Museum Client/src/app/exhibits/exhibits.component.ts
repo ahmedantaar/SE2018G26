@@ -14,12 +14,12 @@ export class ExhibitsComponent {
         ngOnInit(){
           
         this.cols = [
-            { url: '..\\..\\assets\\img\\angular2-logo-red.png', header:"artist1", path: '../art' , class:""  },
-            { url: "..\\..\\assets\\img\\cover.jpeg" , header:"artist2" , path: '../art' , class:"" },
-            { url: "..\\..\\assets\\img\\sidebar-3.jpg", header:"artist3" , path: '../art' , class:""},
-            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"artist4", path: '../art' , class:""},
-            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"artist5", path: '../art' , class:""},
-            { url: "..\\..\\assets\\img\\sidebar-3.jpg", header:"artist6" , path: '../art' , class:""},
+            { url: '..\\..\\assets\\img\\artists\\download (1).jpg', header:"picasso", path: 'art' , class:""  },
+            { url: "..\\..\\assets\\img\\artists\\Hiller_Carlos_2-1024x683.jpg" , header:"artist" , path: 'art' , class:"" },
+            { url: "..\\..\\assets\\img\\artists\\artyork.jpg", header:"artist3" , path: 'art' , class:""},
+            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"artist4", path: '.art' , class:""},
+            { url: '..\\..\\assets\\img\\artists\\download.jpg', header:"van gogh", path: 'art' , class:""},
+           
         ];
 
 }

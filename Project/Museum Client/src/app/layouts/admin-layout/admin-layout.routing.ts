@@ -1,3 +1,4 @@
+import { ArtMuseumComponent } from './../../art-museum/art-museum.component';
 import { AuctionComponent } from './../../auction/auction.component';
 import { ExhibitsComponent } from './../../exhibits/exhibits.component';
 import { MainPageComponent } from './../../main-page/main-page.component';
@@ -12,6 +13,10 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { RegisterComponent } from '../../register/register.component';
 import { MuseumsComponent } from '../../museums/museums.component';
 import { PicDescriptionComponent } from '../../pic-description/pic-description.component';
+import { PicdescriptionexhibitComponent } from '../../picdescriptionexhibit/picdescriptionexhibit.component';
+import { CommunityComponent } from '../../community/community.component';
+import { PicCommunityComponent } from '../../pic-community/pic-community.component';
+import { SigninComponent } from '../../signin/signin.component';
 
 
 NgModule({
@@ -68,11 +73,23 @@ export const AdminLayoutRoutes: Routes = [
     //     }]
     // }
     { path: 'dashboard',        component: MainPageComponent },
-    { path: 'art',        component: ArtExhibitsComponent },
     { path: 'main',        component: MainPageComponent },
     { path: 'museum',        component: MuseumsComponent },
-    { path: 'picture',        component: PicDescriptionComponent },
+    { path: 'museum/art',        component: ArtMuseumComponent },
+    { path: 'museum/art/picture',        component: PicDescriptionComponent },
     { path: 'artexhibit',        component: ExhibitsComponent },
+    { path: 'artexhibit/art',        component: ArtExhibitsComponent },
+    { path: 'artexhibit/art/picture',        component: PicdescriptionexhibitComponent },
+    { path: 'community',        component: CommunityComponent },
+    { path: 'community/picture',        component: PicCommunityComponent },
     { path: 'auction',        component: AuctionComponent },
+    { path: 'register',        component: RegisterComponent },
+    { path: 'signin',        component: SigninComponent }
+    
+    
+    
+    
+   
+    
 ];
 

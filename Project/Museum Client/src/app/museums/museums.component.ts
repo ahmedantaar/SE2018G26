@@ -14,12 +14,11 @@ export class MuseumsComponent  implements OnInit {
         ngOnInit(){
           
         this.cols = [
-            { url: '..\\..\\assets\\img\\angular2-logo-red.png', header:"museum1", path: '../art' , class:""  },
-            { url: "..\\..\\assets\\img\\cover.jpeg" , header:"museum2" , path: '../art' , class:"" },
-            { url: "..\\..\\assets\\img\\sidebar-3.jpg", header:"museum3" , path: '../art' , class:""},
-            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"museum4", path: '../art' , class:""},
-            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"museum4", path: '../art' , class:""},
-            { url: "..\\..\\assets\\img\\sidebar-3.jpg", header:"museum3" , path: '../art' , class:""},
+            { url: '..\\..\\assets\\img\\museums\\1.jpg', header:"Egyption Museum", path: 'art' , class:""  },
+            { url: "..\\..\\assets\\img\\museums\\photos.medleyphoto.2369092.jpg" , header:"The Louvre" , path: 'art' , class:"" },
+            { url: "..\\..\\assets\\img\\museums\\Rijksmuseum-Amsterdam.jpg", header:"Rijksmuseum" , path: 'art' , class:""},
+            { url: '..\\..\\assets\\img\\museums\\image-1 (1).jpg', header:"Cambodia", path: 'art' , class:""},
+            { url: "..\\..\\assets\\img\\arts\\worlds-best-museums-02.jpg", header:"Musée D'Orsay" , path: 'art' , class:""},
         ];
 
 }

@@ -1,0 +1,49 @@
+<!--component html goes here -->
+<div class="main-content">
+        <div class="container-fluid">
+                <button pButton style="margin-left: 14px" label="Uplaod" type="button"  ></button>
+                <button pButton style="margin-left: 14px" label="Gift Shop" type="button"  ></button>
+                <h2>Museum1</h2>
+                <mat-form-field class="example-full-width">
+                <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
+                </mat-form-field>
+            <!-- <img src="Card" src="..\..\assets\img\angular2-logo-red.png"> -->
+            <div class="nav" id = "container">
+                <!-- <p-card header="Advanced Card" [style]="{width: '200px'}">
+                    <p-header>
+                        <img src="Card" src="..\..\assets\img\angular2-logo-red.png">
+                    </p-header>
+    
+                </p-card>
+                <p-card header="Advanced Card" [style]="{width: '200px'}">
+                    <p-header>
+                        <img src="Card" src="..\..\assets\img\apple-icon.png">
+                    </p-header>
+    
+                </p-card> -->
+                
+                <div  routerLinkActive="active"      >
+                        <a *ngFor="let col of cols"  class="nav-link" [routerLink]="[col.path]">
+                                <img     [src]="col.field">
+                            </a>
+                   <!-- <a  *ngFor="let col of cols"  href='/picture'> <img    [src]="col.field" > </a> -->
+                
+                </div>
+                <div   routerLinkActive="active" >
+                        <a *ngFor="let col1 of cols1" class="nav-link" [routerLink]="[col1.path]"> <img  [src]="col1.field"> </a>
+                   
+                </div>
+                 <div >
+                        <a  *ngFor="let col2 of cols2"  class="nav-link" [routerLink]="[col2.path]"><img    [src]="col2.field"> </a>
+                      
+                </div> 
+                <div  >
+                        <a  *ngFor="let col3 of cols3"  class="nav-link" [routerLink]="[col3.path]"> <img  [src]="col3.field"> </a>
+                    
+                </div>
+                
+               
+                
+            </div>
+        </div>
+    </div>

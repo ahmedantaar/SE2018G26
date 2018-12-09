@@ -1,3 +1,8 @@
+import { SigninComponent } from './../../signin/signin.component';
+import { PicCommunityComponent } from './../../pic-community/pic-community.component';
+import { CommunityComponent } from './../../community/community.component';
+import { ArtMuseumComponent } from './../../art-museum/art-museum.component';
+import { PicdescriptionexhibitComponent } from './../../picdescriptionexhibit/picdescriptionexhibit.component';
 import { AuctionComponent } from './../../auction/auction.component';
 import { ExhibitsComponent } from './../../exhibits/exhibits.component';
 import { MainPageComponent } from './../../main-page/main-page.component';
@@ -46,6 +51,7 @@ import { MuseumsComponent } from '../../museums/museums.component';
 
 
 
+
 @NgModule({
   imports: [
     
@@ -85,7 +91,11 @@ import { MuseumsComponent } from '../../museums/museums.component';
     MainPageComponent,
     ExhibitsComponent,
     AuctionComponent,
-    
+    PicdescriptionexhibitComponent,
+    ArtMuseumComponent,
+    CommunityComponent,
+    PicCommunityComponent,
+    SigninComponent
     
   
     

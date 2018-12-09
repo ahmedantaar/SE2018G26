@@ -2,19 +2,19 @@
 import { NgModule } from '@angular/core';
 
 // This Module's Components
-import { AuctionComponent } from './auction.component';
+import { ArtMuseumComponent } from './art-museum.component';
 
 @NgModule({
     imports: [
 
     ],
     declarations: [
-        AuctionComponent,
+        ArtMuseumComponent,
     ],
     exports: [
-        AuctionComponent,
+        ArtMuseumComponent,
     ]
 })
-export class AuctionModule {
+export class ArtMuseumModule {
 
 }

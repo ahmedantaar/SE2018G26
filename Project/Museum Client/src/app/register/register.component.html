@@ -9,46 +9,56 @@
                         <p class="card-category">Complete your profile</p>
                     </div>
                     <div class="card-body">
-                        
-                            <div class="row">
-                                
-                                <div class="col-md-3">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput autofocus  [(ngModel)]="car.Name" placeholder="Username">
-                                    </mat-form-field>
-                                </div>
-                                </div>
-                                <div class="row">
-                                <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput  [(ngModel)]="car.Email" placeholder="Email address" type="email">
-                                    </mat-form-field>
-                                </div>
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput autofocus [(ngModel)]="car.Name" placeholder="Username">
+                                </mat-form-field>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput autofocus [(ngModel)]="car.Name" placeholder="Password">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [(ngModel)]="car.Email" placeholder="Email address" type="email">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Fist Name" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Last Name" type="text">
-                                  </mat-form-field>
-                                </div>
+                                </mat-form-field>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput [(ngModel)]="car.Users_Group"  placeholder="Users Group" type="text">
-                                  </mat-form-field>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [(ngModel)]="car.Users_Group" placeholder="Mobile Phone" type="text">
+                                </mat-form-field>
                             </div>
-                            
-                           
-                            <button mat-raised-button type="button" (click)="register()"  class="btn btn-danger pull-right"><a  href="/users">Register</a></button>
-                            <div class="clearfix"></div>
-                        
+                        </div>
+
+
+                        <button mat-raised-button type="button" (click)="register()" class="btn btn-danger pull-right">
+                            <a href="/users">Register</a>
+                        </button>
+                        <div class="clearfix"></div>
+
                     </div>
                 </div>
             </div>
@@ -71,5 +81,4 @@
             </div>-->
         </div>
     </div>
-  </div>
-  
+</div>
