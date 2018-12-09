@@ -1,9 +1,42 @@
 .showcase{
     .showcase-text{
         padding: 48px;
+        h2{
+            padding-bottom: 24px;
+            font-size: 42px;
+            font-weight: 600;
+        }
     }
-    .showcase-img{
-        background-image: url(../../assets/img/3.jpg);
+    .muesum-img{
+        background-image: url(../../assets/img/muesum.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 480px;
+    }
+    .exhibit-img{
+        background-image: url(../../assets/img/art-exhibits.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 480px;
+    }
+    .auction-img{
+        background-image: url(../../assets/img/auction.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 480px;
+    }
+    .gift-shop-img{
+        background-image: url(../../assets/img/gift-shop.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 480px;
+    }
+    .community-img{
+        background-image: url(../../assets/img/community.jpg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;

@@ -1,3 +1,5 @@
+import { AuctionComponent } from './../../auction/auction.component';
+import { ExhibitsComponent } from './../../exhibits/exhibits.component';
 import { MainPageComponent } from './../../main-page/main-page.component';
 import { MainComponent } from './../../main/main.component';
 import { ArtExhibitsComponent } from './../../art-exhibits/art-exhibits.component';
@@ -70,5 +72,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'main',        component: MainPageComponent },
     { path: 'museum',        component: MuseumsComponent },
     { path: 'picture',        component: PicDescriptionComponent },
+    { path: 'artexhibit',        component: ExhibitsComponent },
+    { path: 'auction',        component: AuctionComponent },
 ];
 

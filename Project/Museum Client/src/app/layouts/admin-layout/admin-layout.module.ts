@@ -1,3 +1,5 @@
+import { AuctionComponent } from './../../auction/auction.component';
+import { ExhibitsComponent } from './../../exhibits/exhibits.component';
 import { MainPageComponent } from './../../main-page/main-page.component';
 import { MainComponent } from './../../main/main.component';
 import { ArtExhibitsComponent } from './../../art-exhibits/art-exhibits.component';
@@ -81,6 +83,8 @@ import { MuseumsComponent } from '../../museums/museums.component';
     MainComponent,
     RegisterComponent,
     MainPageComponent,
+    ExhibitsComponent,
+    AuctionComponent,
     
     
   

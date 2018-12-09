@@ -6,9 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    min-height: 970px;
-    height: auto;
-    padding-top: 128px;
+    height: 100vh;
+    // height: auto;
+   // padding-top: 128px;
     padding-bottom: 128px;
     .container{
         margin-top: 250px;
@@ -24,13 +24,22 @@
         }
         h1 , h3 {
             color: $white;
+            text-shadow: 2px 2px 8px #111;
         }
     }
     .overlay{
-        position: absolute;
-        background-color: $black;
-        opacity: 0.6;
+        position: absolute; /* Sit on top of the page content */
+        width: 100%; 
+        height: 100%; 
+        top: 0; 
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.1); 
+        z-index: 2; 
     }
     
-    
+    .row {
+        height: 0px;
+    }
 }

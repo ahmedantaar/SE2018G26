@@ -1,6 +1,21 @@
-footer.footer {
-    padding-top: 64px;
-    padding-bottom: 64px;
+.footer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  .contact-list{
+    a{
+      color: #111;
+    }
   }
+
+  .icon-list{
+    li a i {
+      color: #111;
+    }
+  }
+
+
+  }
+
   
   
