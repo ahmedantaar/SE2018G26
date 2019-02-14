@@ -2,17 +2,19 @@
     <div class="container-fluid">
         <div id="container">
             <div>
-            <img src="..\\..\\assets\\img\\cover.jpeg">
+            
+            <img     src={{imageUrl}}{{imgUrl2}}/>
             </div>
-            <div style=" background-color: white ; padding-left: 12px" >
-                    <h3>Artist:</h3>
+            <div style=" background-color: white ; padding-left: 12px" *ngFor="let car of cars" >
+                    <h3>Name: <span style="color: darkred">{{car.name}}</span></h3>
+                    <h3>Artist: <span style="color: darkred">{{car.artist}}</span></h3>
                     <h3>Description:</h3>
-                    <p>dasda oaksd iasdij euwfjc  i</p>
-                <h3>likes:{{likes}}</h3>
+                    <h4 style="color: darkred">{{car.description}}</h4>
+                <h3>likes: <span style="color: darkred">{{car.likes}}</span></h3>
                 
                 <h3>Comments:</h3>
-                <div style=" background-color: rgb(209, 205, 205) ;" *ngFor="let col of cols">
-                    <p>{{col.Name}} : {{col.Comment}}</p>
+                <div style=" background-color: rgb(209, 205, 205) ;">
+                   
                 </div>
                 <mat-form-field class="example-full-width">
                 <input matInput placeholder="Enter Comment"  style=" display: block;"pInputText type="text">

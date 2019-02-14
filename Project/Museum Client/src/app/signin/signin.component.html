@@ -3,8 +3,7 @@
 <div class="main-content">
     <div class="container-fluid">
 
-        
-
+<form #loginForm=ngForm  (ngSubmit)="signIn()">
         <div class="row">
             <div class="col-md-7">
                 <div class="card">
@@ -18,7 +17,7 @@
 
                             <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput autofocus [(ngModel)]="car.Name" placeholder="Email Address">
+                                    <input matInput autofocus name="password" type="email" [(ngModel)]="car.email" placeholder="Email Address" required> 
                                 </mat-form-field>
                             </div>
                         </div>
@@ -26,17 +25,17 @@
 
                             <div class="col-md-3">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput autofocus [(ngModel)]="car.Users_Group" placeholder="Password">
+                                    <input matInput name="password"  type="password" [(ngModel)]="car.password" placeholder="Password" required>
                                 </mat-form-field>
                             </div>
                         </div>
 
-
-                        <a href="../main">
-                            <button mat-raised-button type="button" (click)="register()" class="btn btn-danger">Sign In</button>
-                        </a>
+                        <!-- href="../main" -->
+                      
+                            <button mat-raised-button type="submit"  class="btn btn-danger" [disabled]="!loginForm.valid">Sign In</button>
+                    
                         <a href="../register">
-                            <button mat-raised-button type="button" (click)="register()" class="btn btn-danger">Sign Up</button>
+                            <button mat-raised-button type="button"  class="btn btn-danger">Sign Up</button>
                         </a>
 
 
@@ -64,5 +63,6 @@
                     </div>
                 </div>-->
         </div>
+        </form>
     </div>
 </div>

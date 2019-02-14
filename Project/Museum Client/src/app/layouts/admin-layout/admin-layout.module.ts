@@ -29,6 +29,7 @@ import { TableModule } from 'primeng/table';
 import { SliderModule } from 'primeng/primeng';
 import { MultiSelectModule } from 'primeng/primeng';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { HttpClientModule } from '@angular/common/http';
 
 import {RadioButtonModule} from 'primeng/primeng';
 import {CardModule} from 'primeng/card';
@@ -54,7 +55,7 @@ import { MuseumsComponent } from '../../museums/museums.component';
 
 @NgModule({
   imports: [
-    
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
@@ -77,7 +78,7 @@ import { MuseumsComponent } from '../../museums/museums.component';
     CodeHighlighterModule,
     MatDialogModule,
     CardModule,
-      
+    HttpClientModule,
   ],
   
   declarations: [

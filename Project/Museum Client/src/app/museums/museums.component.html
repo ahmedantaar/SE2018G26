@@ -1,27 +1,85 @@
 <!--component html goes here -->
+
 <div class="main-content">
     <div class="container-fluid">
-     
-            <button pButton style="margin-left: 14px" label="Apply for your museum" type="button"  ></button>
+     <!-- <img src={{imageSrc}}/> -->
+            <button pButton style="margin-left: 14px" label="Apply for your museum" type="button" (click)="addmuseum()" ></button>
             
             <mat-form-field class="example-full-width">
                     <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
                     </mat-form-field>
       
         <div class="nav" id = "container">
-            <div routerLinkActive="active"   *ngFor="let col of cols" class="{{col.class}} nav-item"  >
+            <div routerLinkActive="active"   *ngFor="let car of cars"  >
+                    <!-- class="{{col.class}} nav-item"  -->
             <!-- <a  href='/art'><img     [src]="col.url"></a> -->
-            <a class="nav-link" [routerLink]="[col.path]">
-                    <img     [src]="col.url">
+            <a class="nav-link" [routerLink]="['art']" [queryParams]="{ name: [car.name] , id:[car.id]}" >  
+                <!-- [routerLink]="[col.path]" -->
+                    <img     src={{imageUrl}}{{car.image}}/>
+                    <!-- <h3>{{car.name}}</h3> -->
                 </a>
-            <h4>{{col.header}}</h4>
+            <h4>{{car.name}}</h4>
         </div>
         </div>
     </div>
-     <!-- <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
-            </a>
-        </li>
-    </ul> -->
+   
 </div>
+
+<p-dialog header="Put Your Museum Informations" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
+                
+   
+              <form> 
+        <li  style="list-style-type: none">
+            <div class="ui-g-12" class="form-group">
+                    <div class="ui-g-4">
+                        <label style="font-weight:bold; color: black" >Museum Name</label>
+                    </div>
+                    <div class="ui-g-8">
+                        <input  type="text" name="name" [(ngModel)]="car.name" required class="form-control" />
+                    </div>
+                </div>
+    </li>
+    
+<li  style="list-style-type: none">
+    <div class="ui-g-12" class="form-group">
+            <div class="ui-g-4">
+                <label style="font-weight:bold; color: black" >Address</label>
+            </div>
+            <div class="ui-g-8">
+                <input  type="text" name="address"  required [(ngModel)]="car.address" class="form-control" />
+            </div>
+        </div>
+</li>
+
+ 
+ 
+   
+
+
+   
+        Select image to upload:
+        
+        <!-- <img [src]="imgUrl"  style="width: 50px ; height:50px;">     
+        <input type="file" (change)="onFileSelected($event)" #image accept="image/*" >  -->
+        <!-- <button type="button" pButton icon="fa fa-close" (click)="Cancel()" label="Cancel"></button> -->
+   
+        <!-- <div class="image-upload">
+                <img [src]="imageSrc" style="max-width:300px;max-height:300px"/>
+                <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+            </div>  -->
+<!-- <img [src]="imgUrl" style="width:250px ;height:50px;">
+<input type="file" #image accept="image/*" name="image" [(ngModel)]="car.image" > -->
+
+<span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: #f3f3f3">
+        Upload file<input type="file" name="file" hidden multiple (change)="uploadFile($event)">
+    </label>
+    </span>
+
+<p-footer>
+<br>
+        <button type="submit"   (click)="onSubmit()" class="btn btn-success"   >Submit</button>
+    
+    
+</p-footer>
+</form> 
+</p-dialog>
