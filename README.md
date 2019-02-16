@@ -5,4 +5,4 @@ Online museum is a web site that help people who can’t afford to visit real mu
 There is a problem while uploading the website to hosting server beccause so there is no link and we tried to communicate with Dr. Mohammed Sobh and Eng. Amr so we hope we can deliver it offline.
 
 Github Issue: 
-Before the last upload we faced a lot of merge issues so we decided to just delete the whole client and upload it again fresh.
+Before our last last upload appeared alot merge issues but we did have a saved last version copy that we over wrote it on the merge points.
