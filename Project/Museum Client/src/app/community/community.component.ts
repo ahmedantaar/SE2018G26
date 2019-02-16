@@ -54,6 +54,7 @@ export class CommunityComponent implements OnInit {
         
 
     }
+<<<<<<< HEAD
     start(){
         this.DataService.getData("community").subscribe(items => {
             // console.log(items)
@@ -66,6 +67,18 @@ export class CommunityComponent implements OnInit {
         ngOnInit(){
        
            this.start();
+=======
+    
+        ngOnInit(){
+       
+            this.DataService.getData("community").subscribe(items => {
+                // console.log(items)
+                this.cars = items;
+             },
+             err => {
+                 console.log("error");
+             });
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         }
 
         upload() {
@@ -80,7 +93,11 @@ export class CommunityComponent implements OnInit {
               this.formData = new FormData();
               //elem.files[0].name = "1.PNG";  //line 4
               
+<<<<<<< HEAD
               //console.log(elem.files[0])
+=======
+              console.log(elem.files[0])
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
               this.formData.append('myfile', elem.files[0]);  //line 5
              // console.log(this.formData)
             //   this.DataService.sendFile(this.formData).subscribe( //line8
@@ -107,6 +124,7 @@ export class CommunityComponent implements OnInit {
      }
      save(image){
     this.car.image = image;
+<<<<<<< HEAD
      //console.log(this.car.image)
      this.DataService.addCommunity(this.car, "community").subscribe(records => {
     this.start();
@@ -116,8 +134,22 @@ export class CommunityComponent implements OnInit {
     
          });
     }
+=======
+     console.log(this.car.image)
+     this.DataService.addCommunity(this.car, "community").subscribe(records => {
+    
+        // console.log(records)
+     },
+         error => {
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
+    
+         });
+    }
+<<<<<<< HEAD
+=======
     
     }
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
 
     class Car {
 

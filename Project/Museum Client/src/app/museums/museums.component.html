@@ -18,9 +18,13 @@
                     <img     src={{imageUrl}}{{car.image}}/>
                     <!-- <h3>{{car.name}}</h3> -->
                 </a>
+<<<<<<< HEAD
                 <div style="margin-left: 50px ; ">
             <h4  style="color: darkred ; font-weight: bold">{{car.name}}</h4>
         </div>
+=======
+            <h4>{{car.name}}</h4>
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         </div>
         </div>
     </div>
@@ -30,7 +34,11 @@
 <p-dialog header="Put Your Museum Informations" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
                 
    
+<<<<<<< HEAD
               <form #loginForm=ngForm> 
+=======
+              <form> 
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         <li  style="list-style-type: none">
             <div class="ui-g-12" class="form-group">
                     <div class="ui-g-4">
@@ -72,14 +80,23 @@
 <!-- <img [src]="imgUrl" style="width:250px ;height:50px;">
 <input type="file" #image accept="image/*" name="image" [(ngModel)]="car.image" > -->
 
+<<<<<<< HEAD
 <span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: royalblue">
         Upload Image<input type="file" name="file" hidden multiple (change)="uploadFile($event)">
+=======
+<span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: #f3f3f3">
+        Upload file<input type="file" name="file" hidden multiple (change)="uploadFile($event)">
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     </label>
     </span>
 
 <p-footer>
 <br>
+<<<<<<< HEAD
         <button [disabled]="!loginForm.valid" type="submit"    (click)="onSubmit()" class="btn btn-success"   >Submit</button>
+=======
+        <button type="submit"   (click)="onSubmit()" class="btn btn-success"   >Submit</button>
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     
     
 </p-footer>

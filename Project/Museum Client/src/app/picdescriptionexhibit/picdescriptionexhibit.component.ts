@@ -14,9 +14,13 @@ import { DataService } from '../data.service';
 })
 export class PicdescriptionexhibitComponent  implements OnInit {
     selectedCar: Car;
+<<<<<<< HEAD
     selectedComment: Comment;
     comments:Comment[];
     comment: any = new Comment();
+=======
+
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     mode: boolean = false;
 
     newCar: boolean;
@@ -56,9 +60,14 @@ export class PicdescriptionexhibitComponent  implements OnInit {
 
     }
     likes;
+<<<<<<< HEAD
     comment1; 
     userId = localStorage.getItem("id")
     start(){
+=======
+
+    ngOnInit() {
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         this.route.queryParams
         .filter(params => params.id)
         .subscribe(params => {
@@ -72,11 +81,16 @@ export class PicdescriptionexhibitComponent  implements OnInit {
             
             this.cars = items;
             this.imgUrl2 = this.cars[0]["image"]
+<<<<<<< HEAD
           //  console.log(this.cars)
+=======
+            console.log(this.cars)
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         },
             err => {
                 console.log("error");
             });
+<<<<<<< HEAD
             //console.log(this.id)
             this.DataService.getmuseumComment(this.id, "exhibitCommentView").subscribe(items1 => {
             
@@ -119,4 +133,14 @@ class Car {
 class Comment {
 
     constructor(public museums_arts_id?, public name?, public comment? ) { }
+=======
+        
+       
+    }
+
+}
+class Car {
+
+    constructor(public name?, public artist?, public description?, public likes? , public image? ) { }
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
 }

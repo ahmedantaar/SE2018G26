@@ -27,14 +27,22 @@
     <p-dialog header="Put Your Museum Informations" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
                 
    
+<<<<<<< HEAD
                <form #loginForm=ngForm>
+=======
+               <form>
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
             <li  style="list-style-type: none">
                 <div class="ui-g-12">
                         <div class="ui-g-4">
                             <label style="font-weight:bold; color: black" >Art Name</label>
                         </div>
                         <div class="ui-g-8">
+<<<<<<< HEAD
                             <input pInputText [(ngModel)]="car.name" required class="form-control" name="name" required />
+=======
+                            <input pInputText [(ngModel)]="car.name" required class="form-control" name="name"  />
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
                         </div>
                     </div>
         </li>
@@ -45,7 +53,11 @@
                     <label style="font-weight:bold; color: black" >Artist Name</label>
                 </div>
                 <div class="ui-g-8">
+<<<<<<< HEAD
                     <input pInputText [(ngModel)]="car.artist" required class="form-control" name="artist" required />
+=======
+                    <input pInputText [(ngModel)]="car.artist" required class="form-control" name="artist" />
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
                 </div>
             </div>
     </li>
@@ -55,19 +67,32 @@
                         <label style="font-weight:bold; color: black" >Description</label>
                     </div>
                     <div class="ui-g-8">
+<<<<<<< HEAD
                         <textarea pInputText [(ngModel)]="car.description" required class="form-control" name="description"  ></textarea>
+=======
+                        <textarea pInputText [(ngModel)]="car.description" required class="form-control" name="description" ></textarea>
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
                     </div>
                 </div>
         </li>
   
+<<<<<<< HEAD
         <span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: royalblue">
             Upload Image<input type="file" name="file" hidden multiple required (change)="uploadFile($event)">
+=======
+        <span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: #f3f3f3">
+            Upload file<input type="file" name="file" hidden multiple (change)="uploadFile($event)">
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         </label>
         </span>
      
     <p-footer>
     <br>
+<<<<<<< HEAD
             <button    (click)="onSubmit()" class="btn btn-success" [disabled]="!loginForm.valid" type="submit" > submit</button>
+=======
+            <button type="button"   (click)="onSubmit()" class="btn btn-success"  > submit</button>
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         
         
     </p-footer>

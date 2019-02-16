@@ -20,7 +20,11 @@ export class RegisterComponent implements OnInit {
        }
 ngOnInit(){
     this.DataService.getData("users").subscribe(items => {
+<<<<<<< HEAD
         //console.log(items)
+=======
+        console.log(items)
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     },
     error =>  {
                 console.log("error");
@@ -30,7 +34,11 @@ ngOnInit(){
         
      this.DataService.addUser(this.car,"users").subscribe(records => {
            
+<<<<<<< HEAD
           //console.log("hey")
+=======
+          console.log("hey")
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
            },
        error =>  {
                  

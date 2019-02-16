@@ -13,17 +13,26 @@ import { DataService } from '../data.service';
 })
 export class PicDescriptionComponent implements OnInit {
     selectedCar: Car;
+<<<<<<< HEAD
     selectedComment: Comment;
     comments:Comment[];
     comment: any = new Comment();
+=======
+
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     mode: boolean = false;
 
     newCar: boolean;
     cars: Car[];
+<<<<<<< HEAD
     
     cols = [];
     car: any = new Car();
   
+=======
+    cols = [];
+    car: any = new Car();
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     label;
     first;
     seconed;
@@ -57,9 +66,14 @@ export class PicDescriptionComponent implements OnInit {
 
     }
     likes;
+<<<<<<< HEAD
     comment1; 
     userId = localStorage.getItem("id")
     start(){
+=======
+
+    ngOnInit() {
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         this.route.queryParams
         .filter(params => params.id)
         .subscribe(params => {
@@ -73,11 +87,16 @@ export class PicDescriptionComponent implements OnInit {
             
             this.cars = items;
             this.imgUrl2 = this.cars[0]["image"]
+<<<<<<< HEAD
            // console.log(this.cars)
+=======
+            console.log(this.cars)
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         },
             err => {
                 console.log("error");
             });
+<<<<<<< HEAD
            // console.log(this.id)
             this.DataService.getmuseumComment(this.id, "museumCommentView").subscribe(items1 => {
             
@@ -94,6 +113,10 @@ export class PicDescriptionComponent implements OnInit {
        
         
        this.start()
+=======
+        
+       
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     }
 
     addComment(){
@@ -114,7 +137,13 @@ class Car {
 
     constructor(public name?, public artist?, public description?, public likes? , public image?  ) { }
 }
+<<<<<<< HEAD
 class Comment {
 
     constructor(public museums_arts_id?, public name?, public comment? ) { }
+=======
+class Car {
+
+    constructor(public name?, public artist?, public description?, public likes? , public image? ) { }
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
 }

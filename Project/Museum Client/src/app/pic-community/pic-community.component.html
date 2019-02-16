@@ -10,11 +10,19 @@
                         <h3>Artist: <span style="color: darkred">{{car.artist}}</span></h3>
                         <h3>Description:</h3>
                         <h4 style="color: darkred">{{car.description}}</h4>
+<<<<<<< HEAD
                    
                     
                     <h3>Comments:</h3>
                     <div  *ngFor="let comment of comments">
                         <span style="color: darkred">{{comment.name}}:</span> {{comment.comment}}
+=======
+                    <h3>likes: <span style="color: darkred">{{car.likes}}</span></h3>
+                    
+                    <h3>Comments:</h3>
+                    <div style=" background-color: rgb(209, 205, 205) ;">
+                       
+>>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
                     </div>
                     <mat-form-field class="example-full-width">
                     <input matInput placeholder="Enter Comment"  [(ngModel)]="comment1"  style=" display: block;"pInputText type="text">
