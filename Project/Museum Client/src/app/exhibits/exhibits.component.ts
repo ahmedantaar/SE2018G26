@@ -1,26 +1,138 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import {  OnInit } from '@angular/core';
-
+import { OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 @Component({
     moduleId: module.id,
     selector: 'exhibits',
     templateUrl: 'exhibits.component.html',
     styleUrls: ['exhibits.component.scss']
 })
-export class ExhibitsComponent {
-    cols=[];
+export class ExhibitsComponent implements OnInit {
+    selectedCar: Car;
+
+    selectedVeiw: Veiw;
+    mode: boolean = false;
+
+    newCar: boolean;
+    cars: Car[];
+    veiws: Veiw[];
+
+    cols = [];
+    car: any = new Car();
+    veiw: any = new Veiw();
+
+    label;
+    first;
+    seconed;
+    inputHeader;
+    grad;
+    detailip = [];
+    list = [];
+    cols1;
+    index;
+    answer1;
+
+    try = [];
+    unique_array = [];
+    controller;
+    answerEntry;
+     myBlob = new Blob();
+    showAnswer1;
+    rightAnswer;
+    finalAnswer;
+    Grade;
+    rateControl;
+    imgBlob ;
     menuItems: any[];
+    displayDialog2: boolean;
+    selectedfile: File = null;
     
-        ngOnInit(){
-          
-        this.cols = [
-            { url: '..\\..\\assets\\img\\artists\\download (1).jpg', header:"picasso", path: 'art' , class:""  },
-            { url: "..\\..\\assets\\img\\artists\\Hiller_Carlos_2-1024x683.jpg" , header:"artist" , path: 'art' , class:"" },
-            { url: "..\\..\\assets\\img\\artists\\artyork.jpg", header:"artist3" , path: 'art' , class:""},
-            { url: '..\\..\\assets\\img\\faces\\marc.jpg', header:"artist4", path: '.art' , class:""},
-            { url: '..\\..\\assets\\img\\artists\\download.jpg', header:"van gogh", path: 'art' , class:""},
+    fileToUpload: File = null;
+    
+    // constructor(private http: HttpClient) {}
+    constructor(private DataService: DataService) {
+
+
+    }
+ 
+    imageUrl = "http://127.0.0.1:8000/storage/exhibits/";
+    imageSrc : string;
+
+
+    start(){
+       
+        this.DataService.getData("exhibits").subscribe(items => {
+
+            // this.msgs = [];
+            this.cars = items;
+         
            
-        ];
+           // console.log(this.cols)
+        },
+            error => {
+                console.log("error");
+            });
+
+          
+
+
+  
+    }
+    ngOnInit() {
+
+this.start();
+
+    }
+    addmuseum() {
+
+        this.displayDialog2 = true;
+    }
+
+    formData;
+    uploadFile(event){    //line 1
+        let elem = event.target;  //line 2
+        if(elem.files.length > 0){     //line 3
+          this.formData = new FormData();
+        
+         // console.log(elem.files[0])
+          this.formData.append('myfile', elem.files[0]);  //line 5
+        
+        }
+    }
+imageName;
+    onSubmit() {
+        
+           this.DataService.sendexhibits(this.formData).subscribe( //line8
+            (response) => {
+          
+              
+              this.save(response);
+    
+            });
+       
+    
+        this.displayDialog2 = false;
+    }
+    save(image){
+   this.car.image = image;
+   // console.log(this.car.image)
+    this.DataService.addMuseum(this.car,  "exhibits").subscribe(records => {
+        this.start();
+       // console.log(records)
+    },
+        error => {
+
+        });
+    }
+   
 
 }
+class Car {
+
+    constructor(public address?, public name?) { }
+}
+
+class Veiw {
+    constructor(public address?, public name? , public image?) { }
 }

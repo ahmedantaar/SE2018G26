@@ -1,48 +1,75 @@
+<!--component html goes here -->
 <div class="main-content">
-    <div class="container-fluid">
-            <button pButton style="margin-left: 14px" label="Upload" type="button"  ></button>
-            
-            <h2>Artist</h2>
-            <mat-form-field class="example-full-width">
-            <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
-            </mat-form-field>
-        <!-- <img src="Card" src="..\..\assets\img\angular2-logo-red.png"> -->
-        <div class="nav" id = "container">
-            <!-- <p-card header="Advanced Card" [style]="{width: '200px'}">
-                <p-header>
-                    <img src="Card" src="..\..\assets\img\angular2-logo-red.png">
-                </p-header>
-
-            </p-card>
-            <p-card header="Advanced Card" [style]="{width: '200px'}">
-                <p-header>
-                    <img src="Card" src="..\..\assets\img\apple-icon.png">
-                </p-header>
-
-            </p-card> -->
-            
-            <div  routerLinkActive="active"      >
-                    <a *ngFor="let col of cols"  class="nav-link" [routerLink]="[col.path]">
-                            <img     [src]="col.field">
-                        </a>
-               <!-- <a  *ngFor="let col of cols"  href='/picture'> <img    [src]="col.field" > </a> -->
-            
-            </div>
-            <div   routerLinkActive="active" >
-                    <a *ngFor="let col1 of cols1" class="nav-link" [routerLink]="[col1.path]"> <img  [src]="col1.field"> </a>
-               
-            </div>
-             <div >
-                    <a  *ngFor="let col2 of cols2"  class="nav-link" [routerLink]="[col2.path]"><img    [src]="col2.field"> </a>
-                  
-            </div> 
-            <div  >
-                    <a  *ngFor="let col3 of cols3"  class="nav-link" [routerLink]="[col3.path]"> <img  [src]="col3.field"> </a>
-                
-            </div>
-            
+        <div class="container-fluid">
+                <button pButton style="margin-left: 14px" label="Uplaod" type="button" (click)="upload()"  ></button>
            
-            
+                <h2>{{name}}</h2>
+                <mat-form-field class="example-full-width">
+                <input placeholder="Search..." matInput  style=" display: block;"pInputText type="text" >
+                </mat-form-field>
+           
+            <div class="nav" id = "container">
+                    <div routerLinkActive="active"   *ngFor="let car of cars"  >
+                            <!-- class="{{col.class}} nav-item"  -->
+                    <!-- <a  href='/art'><img     [src]="col.url"></a> -->
+                    <a class="nav-link" [routerLink]="['picture']" [queryParams]="{ id: [car.id]}" >  
+                        <!-- [routerLink]="[col.path]" -->
+                            <!-- <img     [src]="col.field"> -->
+                            <img     src={{imageUrl}}{{car.image}}/>
+                        </a>
+                    <!-- <h4>{{car.name}}</h4> -->
+                </div>
+                </div>
+
         </div>
     </div>
-</div>
+
+    <p-dialog header="Put Your Museum Informations" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
+                
+   
+               <form #loginForm=ngForm>
+            <li  style="list-style-type: none">
+                <div class="ui-g-12">
+                        <div class="ui-g-4">
+                            <label style="font-weight:bold; color: black" >Art Name</label>
+                        </div>
+                        <div class="ui-g-8">
+                            <input pInputText [(ngModel)]="car.name" required class="form-control" name="name" required />
+                        </div>
+                    </div>
+        </li>
+        
+    <li  style="list-style-type: none">
+        <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label style="font-weight:bold; color: black" >Artist Name</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText [(ngModel)]="car.artist" required class="form-control" name="artist" required />
+                </div>
+            </div>
+    </li>
+    <li  style="list-style-type: none">
+            <div class="ui-g-12">
+                    <div class="ui-g-4">
+                        <label style="font-weight:bold; color: black" >Description</label>
+                    </div>
+                    <div class="ui-g-8">
+                        <textarea pInputText [(ngModel)]="car.description" required class="form-control" name="description"  ></textarea>
+                    </div>
+                </div>
+        </li>
+  
+        <span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: royalblue">
+            Upload Image<input type="file" name="file" hidden multiple required (change)="uploadFile($event)">
+        </label>
+        </span>
+     
+    <p-footer>
+    <br>
+            <button    (click)="onSubmit()" class="btn btn-success" [disabled]="!loginForm.valid" type="submit" > submit</button>
+        
+        
+    </p-footer>
+    </form>
+    </p-dialog>

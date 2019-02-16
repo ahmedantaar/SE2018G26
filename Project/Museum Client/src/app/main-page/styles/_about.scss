@@ -3,4 +3,12 @@
     .about-content{
         margin: 150px 0px;    // suppose the whole height= 480px
     }
+    .background-img{
+        background-image: url();
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        min-height: 350px;
+    }
 }

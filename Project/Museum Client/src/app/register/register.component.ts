@@ -14,28 +14,23 @@ export class RegisterComponent implements OnInit {
     car: any = new Car();
 
     constructor(private DataService: DataService ){
-        //this.Math();
+       
        
        
        }
 ngOnInit(){
     this.DataService.getData("users").subscribe(items => {
-        
-        // this.msgs = [];
-       this.cars = items; 
-       console.log(this.cars); 
+        //console.log(items)
     },
     error =>  {
                 console.log("error");
-    }); 
-     
-   
+    });
     }
     register(){
-        this.car.Status = "Active";
-        this.DataService.add1(this.car,"users").subscribe(records => {
+        
+     this.DataService.addUser(this.car,"users").subscribe(records => {
            
-          
+          //console.log("hey")
            },
        error =>  {
                  
@@ -46,6 +41,6 @@ ngOnInit(){
 }
 class Car {
       
-    // constructor(public vin?, public brand?, public color?) {}
+     constructor(public name1?, public password1?, public email?, public firstName?, public lastName?, public mobile?) {}
  }
  

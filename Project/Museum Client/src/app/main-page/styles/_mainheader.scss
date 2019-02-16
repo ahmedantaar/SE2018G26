@@ -1,7 +1,7 @@
 .main-header{ 
     position: relative; 
     display: table;
-    background-image: url(../../assets/img/Main-header.jpg);
+    background-image: url(../../assets\img\background.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +11,7 @@
    // padding-top: 128px;
     padding-bottom: 128px;
     .container{
-        margin-top: 250px;
+      //  margin-top: 250px;
         margin-bottom: auto;
     }
     .main-content{
@@ -19,11 +19,11 @@
         
         h1 {
             font-size: 125px;
-            margin: 0;
+            margin-bottom: 100px;
             padding: 0;
         }
         h1 , h3 {
-            color: $white;
+            color: rgb(63, 18, 18);
             text-shadow: 2px 2px 8px #111;
         }
     }

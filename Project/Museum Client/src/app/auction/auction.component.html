@@ -1,31 +1,108 @@
 <!--component html goes here -->
 <div class="main-content">
-    <div class="container-fluid">
-            <button pButton style="margin-left: 14px" label="Apply for auctioning your items" type="button"  ></button>
-        <div id="container">
+    <div class="container-fluid" >
+        <div style="margin-left: 350px ; margin-bottom: 50px">
+            <button pButton style="margin-left: 14px" label="Apply for auctioning your items" type="button" (click)="upload()"></button>
+            <button pButton style="margin-left: 14px"  label="End auctioning item" type="button" (click)="end()"></button>
+        </div>
+        <div id="container"  style="display: block">
             <div>
                 <!-- <img src="..\..\assets\img\arts\51WAV1JasFL.jpg"> -->
-                <img src="..\..\assets\img\arts\images.jpg">
+                <img src="{{imageUrl}}{{image}}">
             </div>
-            <div >
-                <h3>Artist:</h3>
-                <h3>Description:</h3>
-                <p> </p>
-                <h3>CurrentPrice:{{likes}}$</h3>
+            <div let car of cars >
+                <h3>Name: <span style="color: darkred">{{name}}</span></h3>
+                <h3>Artist: <span style="color: darkred">{{artist}}</span></h3>
+                <h3>Description: </h3>
+                <h4><span style="color: darkred">{{description}}</span></h4>
+                <h3>CurrentPrice: <span style="color: darkred">{{startprice}}$</span> By <span style="color: darkred">{{bidUserName}}</span></h3>
+               
                 <h3>Bid Here</h3>
                 <div>
                     <span>
-                        <input pInputText   />
+                        <input pInputText id="bid" type="number"   />
                     </span>
                     <span>
-                        Least amount to bid is {{likes}}$.
+                        Least amount to bid is <span style="color: darkred">{{leastbid}}$.</span>
                     </span>
                 </div>
                 <div>
-                        <button pButton style="margin-left: 14px" label="Bid" type="button"  ></button>
+                        <button pButton style="margin-left: 14px" label="Bid" type="button" (click)="bid()"  ></button>
                 </div>
 
             </div>
         </div>
+        <div id="container1"  style="display: none">
+            <h1>no more items for auctioning</h1>
+            </div>
     </div>
 </div>
+<p-dialog header="Put Your Museum Informations" [(visible)]="displayDialog2"   [modal]="true" [width]="450">
+                
+   
+    <form #loginForm=ngForm>
+ <li  style="list-style-type: none">
+     <div class="ui-g-12">
+             <div class="ui-g-4">
+                 <label style="font-weight:bold; color: black" >Art Name</label>
+             </div>
+             <div class="ui-g-8">
+                 <input pInputText [(ngModel)]="car.name" required class="form-control" name="name"  />
+             </div>
+         </div>
+</li>
+
+<li  style="list-style-type: none">
+<div class="ui-g-12">
+     <div class="ui-g-4">
+         <label style="font-weight:bold; color: black" >Artist Name</label>
+     </div>
+     <div class="ui-g-8">
+         <input pInputText [(ngModel)]="car.artist" required class="form-control" name="artist" />
+     </div>
+ </div>
+</li>
+<li  style="list-style-type: none">
+ <div class="ui-g-12">
+         <div class="ui-g-4">
+             <label style="font-weight:bold; color: black" >Description</label>
+         </div>
+         <div class="ui-g-8">
+             <textarea pInputText [(ngModel)]="car.description" required class="form-control" name="description" ></textarea>
+         </div>
+     </div>
+</li>
+<li  style="list-style-type: none">
+    <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label style="font-weight:bold; color: black" >Starting Price</label>
+            </div>
+            <div class="ui-g-8">
+                <textarea pInputText [(ngModel)]="car.startprice" required class="form-control" name="startprice" ></textarea>
+            </div>
+        </div>
+   </li>
+   <li  style="list-style-type: none">
+    <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label style="font-weight:bold; color: black" >Least amount to bid</label>
+            </div>
+            <div class="ui-g-8">
+                <textarea pInputText [(ngModel)]="car.leastbid" required class="form-control" name="leastbid" ></textarea>
+            </div>
+        </div>
+   </li>
+
+<span style="color: #2e2b2b;"><label class="btn btn-primary upload-btn" style="background: royalblue">
+ Upload Image<input type="file" name="file" hidden multiple (change)="uploadFile($event)">
+</label>
+</span>
+
+<p-footer>
+<br>
+ <button [disabled]="!loginForm.valid" type="submit"  (click)="onSubmit()" class="btn btn-success"   > submit</button>
+
+
+</p-footer>
+</form>
+</p-dialog>

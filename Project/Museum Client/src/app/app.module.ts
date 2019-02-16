@@ -13,7 +13,8 @@ import {  Title }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {RadioButtonModule} from 'primeng/primeng';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   AgmCoreModule
 } from '@agm/core';
@@ -26,7 +27,8 @@ import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   imports: [
-   
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
