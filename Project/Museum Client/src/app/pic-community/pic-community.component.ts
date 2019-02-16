@@ -12,13 +12,9 @@ import { DataService } from '../data.service';
 export class PicCommunityComponent  implements OnInit {
     
     selectedCar: Car;
-<<<<<<< HEAD
     selectedComment: Comment;
     comments:Comment[];
     comment: any = new Comment();
-=======
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     mode: boolean = false;
 
     newCar: boolean;
@@ -58,7 +54,6 @@ export class PicCommunityComponent  implements OnInit {
 
     }
     likes;
-<<<<<<< HEAD
     comment1; 
     userId = localStorage.getItem("id");
 start(){
@@ -102,35 +97,12 @@ start(){
         this.DataService.addCommunityComment(this.userId, this.id , this.comment1 ,"communityComment").subscribe(items => {
             
            
-=======
-
-    ngOnInit() {
-        this.route.queryParams
-        .filter(params => params.id)
-        .subscribe(params => {
-         // console.log(params); // {order: "popular"}
-  
-         
-          this.id = params.id;
-         //console.log(this.id); // popular
-        });
-        this.DataService.getArtDes(this.id, "community").subscribe(items => {
-            
-            this.cars = items;
-            this.imgUrl2 = this.cars[0]["image"]
-            console.log(this.cars)
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         },
             err => {
                 console.log("error");
             });
-<<<<<<< HEAD
             this.comment1 = null;
             this.start()
-=======
-        
-       
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     }
     }
 
@@ -138,17 +110,8 @@ class Car {
 
     constructor(public name?, public artist?, public description?, public likes? , public image? ) { }
 }
-<<<<<<< HEAD
 class Comment {
 
     constructor(public museums_arts_id?, public name?, public comment? ) { }
 }
 
-=======
-class Car {
-
-    constructor(public name?, public artist?, public description?, public likes? , public image? ) { }
-}
-
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a

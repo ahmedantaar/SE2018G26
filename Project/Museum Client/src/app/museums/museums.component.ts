@@ -58,15 +58,9 @@ export class MuseumsComponent implements OnInit {
  
     imageUrl = "http://127.0.0.1:8000/storage/";
     imageSrc : string;
-<<<<<<< HEAD
 
     start(){
  
-=======
-    ngOnInit() {
-
-       
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         this.DataService.getData("museums").subscribe(items => {
 
             // this.msgs = [];
@@ -79,7 +73,6 @@ export class MuseumsComponent implements OnInit {
                 console.log("error");
             });
 
-<<<<<<< HEAD
     }
     ngOnInit() {
 
@@ -93,23 +86,6 @@ export class MuseumsComponent implements OnInit {
         //console.log("currentImage")
        // console.log(currentImage)
        // console.log(currentImage1)
-=======
-          
-
-
-        // this.cols = [
-        //     { url: '..\\..\\assets\\img\\museums\\1.jpg', header:"Egyption Museum", path: 'art' , class:""  },
-        //     { url: "..\\..\\assets\\img\\museums\\photos.medleyphoto.2369092.jpg" , header:"The Louvre" , path: 'art' , class:"" },
-        //     { url: "..\\..\\assets\\img\\museums\\Rijksmuseum-Amsterdam.jpg", header:"Rijksmuseum" , path: 'art' , class:""},
-        //     { url: '..\\..\\assets\\img\\museums\\image-1 (1).jpg', header:"Cambodia", path: 'art' , class:""},
-        //     { url: "..\\..\\assets\\img\\arts\\worlds-best-museums-02.jpg", header:"Musée D'Orsay" , path: 'art' , class:""},
-        // ];
-
-
-    }
-    addmuseum() {
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         this.displayDialog2 = true;
     }
     // handleFileInput(file : FileList){
@@ -155,11 +131,7 @@ export class MuseumsComponent implements OnInit {
           this.formData = new FormData();
           //elem.files[0].name = "1.PNG";  //line 4
           
-<<<<<<< HEAD
         //  console.log(elem.files[0])
-=======
-          console.log(elem.files[0])
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
           this.formData.append('myfile', elem.files[0]);  //line 5
          // console.log(this.formData)
         //   this.DataService.sendFile(this.formData).subscribe( //line8
@@ -191,7 +163,6 @@ imageName;
         //           error => {
         //         });
         this.displayDialog2 = false;
-<<<<<<< HEAD
         
         console.log(this.cars)
     }
@@ -200,14 +171,6 @@ imageName;
     //console.log(this.car.image)
     this.DataService.addMuseum(this.car,  "museums").subscribe(records => {
         this.start();
-=======
-    }
-    save(image){
-   this.car.image = image;
-    console.log(this.car.image)
-    this.DataService.addMuseum(this.car,  "museums").subscribe(records => {
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
        // console.log(records)
     },
         error => {

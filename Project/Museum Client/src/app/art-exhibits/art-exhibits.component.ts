@@ -48,7 +48,6 @@ export class ArtExhibitsComponent implements OnInit {
     menuItems: any[];
     displayDialog2: boolean;
     selectedfile: File = null;
-<<<<<<< HEAD
     name;
     id;
     cols2 = [];
@@ -85,41 +84,6 @@ export class ArtExhibitsComponent implements OnInit {
 
     }
 
-=======
-   name;
-   id;
-    cols2 = [];
-    cols3 = [];
-    imageUrl = "http://127.0.0.1:8000/storage/exhibitsArt/";
-    constructor(private DataService: DataService , private route: ActivatedRoute) {
-        
-
-    }
-
-
-    ngOnInit() {
-        this.route.queryParams
-        .filter(params => params.name)
-        .subscribe(params => {
-          console.log(params); // {order: "popular"}
-  
-          this.name = params.name;
-          this.id = params.id;
-          console.log(this.id); // popular
-        });
-    
-        this.DataService.getMuseumArt(this.id ,"exhibitsArt").subscribe(items => {
-           // console.log(items)
-           this.cars = items;
-        },
-        err => {
-            console.log("error");
-        });
-      
-
-    }
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     onFileSelected(event) {
         this.selectedfile = <File>event.target.files[0];
     }
@@ -130,7 +94,6 @@ export class ArtExhibitsComponent implements OnInit {
     }
 
     formData;
-<<<<<<< HEAD
     uploadFile(event) {    //line 1
         let elem = event.target;  //line 2
         if (elem.files.length > 0) {     //line 3
@@ -172,53 +135,4 @@ this.start();
 class Car {
 
     constructor(public name?, public artist?, public description?, public exhibits_id?, public image?) { }
-=======
-    uploadFile(event){    //line 1
-        let elem = event.target;  //line 2
-        if(elem.files.length > 0){     //line 3
-          this.formData = new FormData();
-          //elem.files[0].name = "1.PNG";  //line 4
-          
-          console.log(elem.files[0])
-          this.formData.append('myfile', elem.files[0]);  //line 5
-         // console.log(this.formData)
-        //   this.DataService.sendFile(this.formData).subscribe( //line8
-        //     (response) => {
-        //       //response code
-        // console.log(response);
-        //     });
-    
-        }
-    }
-    onSubmit() {
-        
-        this.DataService.sendExhibitArt(this.formData).subscribe( //line8
-         (response) => {
-           //response code
-           
-           this.save(response);
- 
-         });
-    
- 
-
-     this.displayDialog2 = false;
- }
- save(image){
-this.car.image = image;
- console.log(this.car.image)
- this.DataService.addExhibitArt(this.car, this.id, "exhibitsArt").subscribe(records => {
-
-    // console.log(records)
- },
-     error => {
-
-     });
-}
-}
-
-class Car {
-
-    constructor( public name?,  public artist?, public description? , public exhibits_id? , public image?) { }
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
 }

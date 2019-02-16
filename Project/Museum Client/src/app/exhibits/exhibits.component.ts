@@ -58,14 +58,9 @@ export class ExhibitsComponent implements OnInit {
  
     imageUrl = "http://127.0.0.1:8000/storage/exhibits/";
     imageSrc : string;
-<<<<<<< HEAD
 
 
     start(){
-=======
-    ngOnInit() {
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
        
         this.DataService.getData("exhibits").subscribe(items => {
 
@@ -83,14 +78,10 @@ export class ExhibitsComponent implements OnInit {
 
 
   
-<<<<<<< HEAD
     }
     ngOnInit() {
 
 this.start();
-=======
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
 
     }
     addmuseum() {
@@ -104,11 +95,7 @@ this.start();
         if(elem.files.length > 0){     //line 3
           this.formData = new FormData();
         
-<<<<<<< HEAD
          // console.log(elem.files[0])
-=======
-          console.log(elem.files[0])
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
           this.formData.append('myfile', elem.files[0]);  //line 5
         
         }
@@ -129,15 +116,9 @@ imageName;
     }
     save(image){
    this.car.image = image;
-<<<<<<< HEAD
    // console.log(this.car.image)
     this.DataService.addMuseum(this.car,  "exhibits").subscribe(records => {
         this.start();
-=======
-    console.log(this.car.image)
-    this.DataService.addMuseum(this.car,  "exhibits").subscribe(records => {
-
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
        // console.log(records)
     },
         error => {

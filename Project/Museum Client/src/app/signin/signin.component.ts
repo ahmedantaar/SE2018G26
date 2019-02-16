@@ -30,7 +30,6 @@ ngOnInit(){
     password: null,
     }
     signIn(){
-<<<<<<< HEAD
 
         if (!localStorage.getItem("name")){
         //console.log("kk")
@@ -39,13 +38,6 @@ ngOnInit(){
              window.location.pathname = '../main'
             // console.log(pass)
              
-=======
-        console.log("kk")
-        this.DataService.checkUser(this.car,"users").subscribe(pass => {
-        
-            // window.location.pathname = '../main'
-             console.log(pass)
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
         //  if (this.car["password"] == pass){
         //      alert("pass is correct")
         //      window.location.pathname = '../main'
@@ -61,18 +53,12 @@ ngOnInit(){
            
     
        });
-       
-       
-     
     }
-<<<<<<< HEAD
       else{
         alert("you have to logout first")
       } 
      
     }
-=======
->>>>>>> c44877c7a1c28749208a48caa0161f9afe912c4a
     
 
     
