@@ -6,3 +6,4 @@ There is a problem while uploading the website to hosting server beccause so the
 
 Github Issue: 
 Before our last last upload appeared alot merge issues but we did have a saved last version copy that we over wrote it on the merge points.
+instead of fixing each merge issue individually.
